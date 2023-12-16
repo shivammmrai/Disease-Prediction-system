@@ -1,5 +1,5 @@
 from sklearn.tree import DecisionTreeClassifier
-from sklearn.model_selection import train_test_split
+from sklearn.cross_validation import train_test_split
 import csv,numpy as np,pandas as pd
 import os
 
@@ -11,7 +11,7 @@ x = df[cols]
 y = df['prognosis']
 x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.33, random_state=42)
 
-print ("DecisionTree")
+#print ("DecisionTree")
 dt = DecisionTreeClassifier()
 clf_dt=dt.fit(x_train,y_train)
 #print ("Acurracy: ", clf_dt.score(x_test,y_test))
